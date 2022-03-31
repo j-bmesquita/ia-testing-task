@@ -18,3 +18,13 @@ C:\Users\afmon\Desktop\DuplicateFinder\DuplicateFinder\DuplicateFinder.Console\o
 C:\Users\afmon\Desktop\DuplicateFinder\DuplicateFinder\DuplicateFinder.Console\obj\Debug\DuplicateFinder.Console.csproj.CopyComplete
 C:\Users\afmon\Desktop\DuplicateFinder\DuplicateFinder\DuplicateFinder.Console\obj\Debug\DuplicateFinder.Console.exe
 C:\Users\afmon\Desktop\DuplicateFinder\DuplicateFinder\DuplicateFinder.Console\obj\Debug\DuplicateFinder.Console.pdb
+C:\Users\jbmes\Source\Repos\j-bmesquita\ia-testing-task\DuplicateFinder\DuplicateFinder.Console\bin\Debug\DuplicateFinder.Console.exe.config
+C:\Users\jbmes\Source\Repos\j-bmesquita\ia-testing-task\DuplicateFinder\DuplicateFinder.Console\bin\Debug\DuplicateFinder.Console.exe
+C:\Users\jbmes\Source\Repos\j-bmesquita\ia-testing-task\DuplicateFinder\DuplicateFinder.Console\bin\Debug\DuplicateFinder.Console.pdb
+C:\Users\jbmes\Source\Repos\j-bmesquita\ia-testing-task\DuplicateFinder\DuplicateFinder.Console\bin\Debug\DuplicateFinder.Logic.dll
+C:\Users\jbmes\Source\Repos\j-bmesquita\ia-testing-task\DuplicateFinder\DuplicateFinder.Console\bin\Debug\DuplicateFinder.Logic.pdb
+C:\Users\jbmes\Source\Repos\j-bmesquita\ia-testing-task\DuplicateFinder\DuplicateFinder.Console\obj\Debug\DuplicateFinder.Console.csproj.AssemblyReference.cache
+C:\Users\jbmes\Source\Repos\j-bmesquita\ia-testing-task\DuplicateFinder\DuplicateFinder.Console\obj\Debug\DuplicateFinder.Console.csproj.CoreCompileInputs.cache
+C:\Users\jbmes\Source\Repos\j-bmesquita\ia-testing-task\DuplicateFinder\DuplicateFinder.Console\obj\Debug\DuplicateFinder.Console.csproj.CopyComplete
+C:\Users\jbmes\Source\Repos\j-bmesquita\ia-testing-task\DuplicateFinder\DuplicateFinder.Console\obj\Debug\DuplicateFinder.Console.exe
+C:\Users\jbmes\Source\Repos\j-bmesquita\ia-testing-task\DuplicateFinder\DuplicateFinder.Console\obj\Debug\DuplicateFinder.Console.pdb

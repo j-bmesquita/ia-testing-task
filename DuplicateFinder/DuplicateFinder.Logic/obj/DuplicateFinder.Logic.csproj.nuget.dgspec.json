@@ -1,25 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lucas.milagres\\Documents\\Software\\DuplicateFinder-Adrian\\DuplicateFinder\\DuplicateFinder.Logic\\DuplicateFinder.Logic.csproj": {}
+    "C:\\Users\\jbmes\\Source\\Repos\\j-bmesquita\\ia-testing-task\\DuplicateFinder\\DuplicateFinder.Logic\\DuplicateFinder.Logic.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lucas.milagres\\Documents\\Software\\DuplicateFinder-Adrian\\DuplicateFinder\\DuplicateFinder.Logic\\DuplicateFinder.Logic.csproj": {
+    "C:\\Users\\jbmes\\Source\\Repos\\j-bmesquita\\ia-testing-task\\DuplicateFinder\\DuplicateFinder.Logic\\DuplicateFinder.Logic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lucas.milagres\\Documents\\Software\\DuplicateFinder-Adrian\\DuplicateFinder\\DuplicateFinder.Logic\\DuplicateFinder.Logic.csproj",
+        "projectUniqueName": "C:\\Users\\jbmes\\Source\\Repos\\j-bmesquita\\ia-testing-task\\DuplicateFinder\\DuplicateFinder.Logic\\DuplicateFinder.Logic.csproj",
         "projectName": "DuplicateFinder.Logic",
-        "projectPath": "C:\\Users\\lucas.milagres\\Documents\\Software\\DuplicateFinder-Adrian\\DuplicateFinder\\DuplicateFinder.Logic\\DuplicateFinder.Logic.csproj",
-        "packagesPath": "C:\\Users\\lucas.milagres\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lucas.milagres\\Documents\\Software\\DuplicateFinder-Adrian\\DuplicateFinder\\DuplicateFinder.Logic\\obj\\",
+        "projectPath": "C:\\Users\\jbmes\\Source\\Repos\\j-bmesquita\\ia-testing-task\\DuplicateFinder\\DuplicateFinder.Logic\\DuplicateFinder.Logic.csproj",
+        "packagesPath": "C:\\Users\\jbmes\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jbmes\\Source\\Repos\\j-bmesquita\\ia-testing-task\\DuplicateFinder\\DuplicateFinder.Logic\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\lucas.milagres\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\jbmes\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -27,8 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Users\\lucas.milagres\\Documents\\Software\\NugetTests": {},
-          "\\\\fs\\Ground Equipment\\50_ControlSystems\\03_SoftwareDevelopment\\02_NuGet": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -64,7 +57,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
         }
       }
     }

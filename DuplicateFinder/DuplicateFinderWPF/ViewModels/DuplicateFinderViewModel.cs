@@ -122,10 +122,20 @@ namespace DuplicateFinderWPF.ViewModels
                 var duplicateBySizeAndName = _finder.CollectCandidates(Path, DuplicateFinder.Logic.Model.CompareMode.SizeAndName);
                 var duplicateByMD5 = _finder.CheckCandidates(duplicateBySizeAndName);
 
+                //Experimenting //these are the intializing
+                //Console.WriteLine(duplicateBySize);
+                //Console.WriteLine(duplicateBySizeAndName);
+                //Console.WriteLine(duplicateByMD5);
+
 
                 DuplicateBySize = CheckEmptyString(SampleDuplicates(duplicateBySize));
                 DuplicateBySizeAndName = CheckEmptyString(SampleDuplicates(duplicateBySizeAndName));
                 DuplicateByMD5 = CheckEmptyString(SampleDuplicates(duplicateByMD5));
+
+                //Experimenting //this is the output
+                //Console.WriteLine(DuplicateBySize);
+                //Console.WriteLine(DuplicateBySizeAndName);
+                //Console.WriteLine(DuplicateByMD5);
             }
         }
     }

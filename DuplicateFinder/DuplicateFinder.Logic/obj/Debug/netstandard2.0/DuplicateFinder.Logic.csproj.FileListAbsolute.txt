@@ -16,3 +16,13 @@ C:\Users\afmon\Desktop\DuplicateFinder\DuplicateFinder\DuplicateFinder.Logic\obj
 C:\Users\afmon\Desktop\DuplicateFinder\DuplicateFinder\DuplicateFinder.Logic\obj\Debug\netstandard2.0\DuplicateFinder.Logic.csproj.CoreCompileInputs.cache
 C:\Users\afmon\Desktop\DuplicateFinder\DuplicateFinder\DuplicateFinder.Logic\obj\Debug\netstandard2.0\DuplicateFinder.Logic.dll
 C:\Users\afmon\Desktop\DuplicateFinder\DuplicateFinder\DuplicateFinder.Logic\obj\Debug\netstandard2.0\DuplicateFinder.Logic.pdb
+C:\Users\jbmes\Source\Repos\j-bmesquita\ia-testing-task\DuplicateFinder\DuplicateFinder.Logic\obj\Debug\netstandard2.0\DuplicateFinder.Logic.dll
+C:\Users\jbmes\Source\Repos\j-bmesquita\ia-testing-task\DuplicateFinder\DuplicateFinder.Logic\obj\Debug\netstandard2.0\DuplicateFinder.Logic.pdb
+C:\Users\jbmes\Source\Repos\j-bmesquita\ia-testing-task\DuplicateFinder\DuplicateFinder.Logic\bin\Debug\netstandard2.0\DuplicateFinder.Logic.deps.json
+C:\Users\jbmes\Source\Repos\j-bmesquita\ia-testing-task\DuplicateFinder\DuplicateFinder.Logic\bin\Debug\netstandard2.0\DuplicateFinder.Logic.dll
+C:\Users\jbmes\Source\Repos\j-bmesquita\ia-testing-task\DuplicateFinder\DuplicateFinder.Logic\bin\Debug\netstandard2.0\DuplicateFinder.Logic.pdb
+C:\Users\jbmes\Source\Repos\j-bmesquita\ia-testing-task\DuplicateFinder\DuplicateFinder.Logic\obj\Debug\netstandard2.0\DuplicateFinder.Logic.csproj.AssemblyReference.cache
+C:\Users\jbmes\Source\Repos\j-bmesquita\ia-testing-task\DuplicateFinder\DuplicateFinder.Logic\obj\Debug\netstandard2.0\DuplicateFinder.Logic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jbmes\Source\Repos\j-bmesquita\ia-testing-task\DuplicateFinder\DuplicateFinder.Logic\obj\Debug\netstandard2.0\DuplicateFinder.Logic.AssemblyInfoInputs.cache
+C:\Users\jbmes\Source\Repos\j-bmesquita\ia-testing-task\DuplicateFinder\DuplicateFinder.Logic\obj\Debug\netstandard2.0\DuplicateFinder.Logic.AssemblyInfo.cs
+C:\Users\jbmes\Source\Repos\j-bmesquita\ia-testing-task\DuplicateFinder\DuplicateFinder.Logic\obj\Debug\netstandard2.0\DuplicateFinder.Logic.csproj.CoreCompileInputs.cache

@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DuplicateFinder.Logic", "Du
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DuplicateFinderWPF", "DuplicateFinderWPF\DuplicateFinderWPF.csproj", "{57FF726A-41EC-4C50-8611-B211DC2D5255}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicTests", "LogicTests\LogicTests.csproj", "{DD82F67F-894A-47E9-B6A5-4B64D8125823}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionTests", "FunctionTests\FunctionTests.csproj", "{7902E19B-6AA9-48ED-A821-B20505E6D0ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{57FF726A-41EC-4C50-8611-B211DC2D5255}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57FF726A-41EC-4C50-8611-B211DC2D5255}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57FF726A-41EC-4C50-8611-B211DC2D5255}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD82F67F-894A-47E9-B6A5-4B64D8125823}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD82F67F-894A-47E9-B6A5-4B64D8125823}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD82F67F-894A-47E9-B6A5-4B64D8125823}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD82F67F-894A-47E9-B6A5-4B64D8125823}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7902E19B-6AA9-48ED-A821-B20505E6D0ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7902E19B-6AA9-48ED-A821-B20505E6D0ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7902E19B-6AA9-48ED-A821-B20505E6D0ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7902E19B-6AA9-48ED-A821-B20505E6D0ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,17 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\DuplicateFinder",
+    "\\DuplicateFinder\\DuplicateFinder.Console",
+    "\\DuplicateFinder\\DuplicateFinder.Console\\bin",
+    "\\DuplicateFinder\\DuplicateFinder.Console\\bin\\Debug",
+    "\\DuplicateFinder\\DuplicateFinder.Console\\obj",
+    "\\DuplicateFinder\\DuplicateFinder.Console\\obj\\Release",
+    "\\DuplicateFinder\\DuplicateFinder.Logic",
+    "\\DuplicateFinder\\DuplicateFinder.Logic\\bin\\Debug",
+    "\\DuplicateFinder\\DuplicateFinderWPF",
+    "\\DuplicateFinder\\DuplicateFinderWPF\\Views"
+  ],
+  "SelectedNode": "\\DuplicateFinder\\DuplicateFinder.sln",
+  "PreviewInSolutionExplorer": false
+}

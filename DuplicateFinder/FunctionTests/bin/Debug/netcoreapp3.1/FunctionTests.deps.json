@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "FunctionTests/1.0.0": {
+        "dependencies": {
+          "DuplicateFinder.Logic": "1.0.0"
+        },
+        "runtime": {
+          "FunctionTests.dll": {}
+        }
+      },
+      "DuplicateFinder.Logic/1.0.0": {
+        "runtime": {
+          "DuplicateFinder.Logic.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FunctionTests/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DuplicateFinder.Logic/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

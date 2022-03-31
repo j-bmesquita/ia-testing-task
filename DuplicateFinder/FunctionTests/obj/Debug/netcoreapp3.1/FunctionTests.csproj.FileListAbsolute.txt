@@ -1,0 +1,17 @@
+C:\Users\jbmes\Source\Repos\j-bmesquita\ia-testing-task\DuplicateFinder\FunctionTests\obj\Debug\netcoreapp3.1\FunctionTests.csproj.AssemblyReference.cache
+C:\Users\jbmes\Source\Repos\j-bmesquita\ia-testing-task\DuplicateFinder\FunctionTests\obj\Debug\netcoreapp3.1\FunctionTests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jbmes\Source\Repos\j-bmesquita\ia-testing-task\DuplicateFinder\FunctionTests\obj\Debug\netcoreapp3.1\FunctionTests.AssemblyInfoInputs.cache
+C:\Users\jbmes\Source\Repos\j-bmesquita\ia-testing-task\DuplicateFinder\FunctionTests\obj\Debug\netcoreapp3.1\FunctionTests.AssemblyInfo.cs
+C:\Users\jbmes\Source\Repos\j-bmesquita\ia-testing-task\DuplicateFinder\FunctionTests\obj\Debug\netcoreapp3.1\FunctionTests.csproj.CoreCompileInputs.cache
+C:\Users\jbmes\Source\Repos\j-bmesquita\ia-testing-task\DuplicateFinder\FunctionTests\bin\Debug\netcoreapp3.1\FunctionTests.exe
+C:\Users\jbmes\Source\Repos\j-bmesquita\ia-testing-task\DuplicateFinder\FunctionTests\bin\Debug\netcoreapp3.1\FunctionTests.deps.json
+C:\Users\jbmes\Source\Repos\j-bmesquita\ia-testing-task\DuplicateFinder\FunctionTests\bin\Debug\netcoreapp3.1\FunctionTests.runtimeconfig.json
+C:\Users\jbmes\Source\Repos\j-bmesquita\ia-testing-task\DuplicateFinder\FunctionTests\bin\Debug\netcoreapp3.1\FunctionTests.runtimeconfig.dev.json
+C:\Users\jbmes\Source\Repos\j-bmesquita\ia-testing-task\DuplicateFinder\FunctionTests\bin\Debug\netcoreapp3.1\FunctionTests.dll
+C:\Users\jbmes\Source\Repos\j-bmesquita\ia-testing-task\DuplicateFinder\FunctionTests\bin\Debug\netcoreapp3.1\FunctionTests.pdb
+C:\Users\jbmes\Source\Repos\j-bmesquita\ia-testing-task\DuplicateFinder\FunctionTests\bin\Debug\netcoreapp3.1\DuplicateFinder.Logic.dll
+C:\Users\jbmes\Source\Repos\j-bmesquita\ia-testing-task\DuplicateFinder\FunctionTests\bin\Debug\netcoreapp3.1\DuplicateFinder.Logic.pdb
+C:\Users\jbmes\Source\Repos\j-bmesquita\ia-testing-task\DuplicateFinder\FunctionTests\obj\Debug\netcoreapp3.1\FunctionTests.csproj.CopyComplete
+C:\Users\jbmes\Source\Repos\j-bmesquita\ia-testing-task\DuplicateFinder\FunctionTests\obj\Debug\netcoreapp3.1\FunctionTests.dll
+C:\Users\jbmes\Source\Repos\j-bmesquita\ia-testing-task\DuplicateFinder\FunctionTests\obj\Debug\netcoreapp3.1\FunctionTests.pdb
+C:\Users\jbmes\Source\Repos\j-bmesquita\ia-testing-task\DuplicateFinder\FunctionTests\obj\Debug\netcoreapp3.1\FunctionTests.genruntimeconfig.cache
