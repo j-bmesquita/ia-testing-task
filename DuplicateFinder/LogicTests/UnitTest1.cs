@@ -10,11 +10,14 @@ namespace DuplicateFinder
 {
     public class UnitTest1
     {
+        string folderPath = "C:\\Users\\jbmes\\source\\repos\\j-bmesquita\\ia-testing-task\\DuplicateFinder\\TestingGround\\Name1"; //input here path to test folder
         [Fact]
-        public void GetCollectEqualNameAndSize()
+        public void NumberOfGroups()
         {
             //arrange
-            string folderPath = "C:\\Users\\jbmes\\source\\repos\\j-bmesquita\\ia-testing-task\\DuplicateFinder\\TestingGround\\Name1"; //input here path to test folder
+            int dupSize = 2;
+            //Assert.Equal(SizeArray, CountGroupsSize(duplicatesBySize));
+            
 
             //act
             var finder = new DuplicateFinder.Logic.DuplicateFinder();
@@ -24,26 +27,50 @@ namespace DuplicateFinder
             var duplicatesByHash = finder.CheckCandidates(duplicatesBySizeAndName).ToList();
 
             //assert we detect the right number of repetition groups for all functions
-            //Assert.Equal(2, NumberRepetitions(duplicatesBySize));
+            Assert.Equal(dupSize, NumberRepetitions(duplicatesBySize));
             //Assert.Equal(0, NumberRepetitions(duplicatesBySizeAndName));
             //Assert.Equal(0, NumberRepetitions(duplicatesByHash));
 
-            //assert we count correctly how many repetitions of each in all functions
+        }
+        [Fact]
+        public void NumberCompositionGroups()
+        {
+            //arrange
             List<int> SizeArray = new List<int>(2);
+            SizeArray.Add(4);
             SizeArray.Add(3);
-            SizeArray.Add(2);
-            //Assert.Equal(SizeArray, CountGroupsSize(duplicatesBySize));
+            //act
+            var finder = new DuplicateFinder.Logic.DuplicateFinder();
+
+            var duplicatesBySize = finder.CollectCandidates(folderPath, DuplicateFinder.Logic.Model.CompareMode.Size).ToList();
+            var duplicatesBySizeAndName = finder.CollectCandidates(folderPath, DuplicateFinder.Logic.Model.CompareMode.SizeAndName).ToList();
+            var duplicatesByHash = finder.CheckCandidates(duplicatesBySizeAndName).ToList();
+
+            //assert
+            Assert.Equal(SizeArray, CountGroupsSize(duplicatesBySize));
+        }
+        [Fact]
+        public void StringCompositionGroups()
+        {
+            //arrange
             List<string> pathArray = new List<string>(5);
+            pathArray.Add("C:\\Users\\jbmes\\source\\repos\\j-bmesquita\\ia-testing-task\\DuplicateFinder\\TestingGround\\Name1\\AChina-healthcare-market-an-introduction - Copy (3).pdf");
             pathArray.Add("C:\\Users\\jbmes\\source\\repos\\j-bmesquita\\ia-testing-task\\DuplicateFinder\\TestingGround\\Name1\\China-healthcare-market-an-introduction - Copy (2).pdf");
             pathArray.Add("C:\\Users\\jbmes\\source\\repos\\j-bmesquita\\ia-testing-task\\DuplicateFinder\\TestingGround\\Name1\\China-healthcare-market-an-introduction - Copy.pdf");
-            pathArray.Add("C:\\Users\\jbmes\\source\\repos\\j-bmesquita\\ia-testing-task\\DuplicateFinder\\TestingGround\\Name1\\China-healthcare-market-an-introduction.pdf");
-            pathArray.Add("C:\\Users\\jbmes\\source\\repos\\j-bmesquita\\ia-testing-task\\DuplicateFinder\\TestingGround\\Name1\\emerging-trends-in-chinese-healthcare - Copy.pdf");
+            pathArray.Add("C:\\Users\\jbmes\\source\\repos\\j-bmesquita\\ia-testing-task\\DuplicateFinder\\TestingGround\\Name1\\ZChina-healthcare-market-an-introduction.pdf");
+            pathArray.Add("C:\\Users\\jbmes\\source\\repos\\j-bmesquita\\ia-testing-task\\DuplicateFinder\\TestingGround\\Name1\\Bemerging-trends-in-chinese-healthcare - Copy.pdf");
             pathArray.Add("C:\\Users\\jbmes\\source\\repos\\j-bmesquita\\ia-testing-task\\DuplicateFinder\\TestingGround\\Name1\\emerging-trends-in-chinese-healthcare.pdf");
+            pathArray.Add("C:\\Users\\jbmes\\source\\repos\\j-bmesquita\\ia-testing-task\\DuplicateFinder\\TestingGround\\Name1\\emerging-trends-in-chinese-healthcare.txt");
 
+            //act
+            var finder = new DuplicateFinder.Logic.DuplicateFinder();
+
+            var duplicatesBySize = finder.CollectCandidates(folderPath, DuplicateFinder.Logic.Model.CompareMode.Size).ToList();
+            var duplicatesBySizeAndName = finder.CollectCandidates(folderPath, DuplicateFinder.Logic.Model.CompareMode.SizeAndName).ToList();
+            var duplicatesByHash = finder.CheckCandidates(duplicatesBySizeAndName).ToList();
+
+            //assert
             Assert.Equal(pathArray, CompleteListGroups(duplicatesBySize));
-            //Assert.Equal(null, CountGroupsSize(duplicatesBySizeAndName));
-            //Assert.Equal(null, CountGroupsSize(duplicatesByHash));
-
         }
 
         //So we can read the values

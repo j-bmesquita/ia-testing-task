@@ -26,7 +26,10 @@ namespace DuplicateFinder
             //assert
             TestPrintDuplicates(duplicatesBySize);
             CountGroupsSize(duplicatesBySize);
-            CompleteListGroups(duplicatesBySize); 
+            CompleteListGroups(duplicatesBySize);
+            
+            string BLPath = @"C:\Users\jbmes\Documents\Files Blacklist.txt"; //It could not find path if Files Blacklisted were within the project?
+            BlackListReader(BLPath);
             //Console.WriteLine(folderPath);
             //Console.WriteLine(finder);
             //Console.WriteLine(duplicatesBySize);
@@ -65,10 +68,10 @@ namespace DuplicateFinder
                 Console.WriteLine(filePath);
             }
         }
-        private static List<string> CompleteListGroups(IEnumerable<IDuplicate> duplicates) //returns list of strings and group number for splits
-        {                                                                  // example, we have three repetitions followed by 2, we have then an array [3,2]
+        private static List<string> CompleteListGroups(IEnumerable<IDuplicate> duplicates) //returns list of strings with the paths. Within the list, paths are already grouped by repetition groups if
+        {                                                                  
             List<string> Grp = new List<string>();
-            List<int> GrpInt = new List<int> { };
+            // List<int> GrpInt = new List<int> { };
             foreach (var duplicate in duplicates)
             {
                 Console.WriteLine("Group Checkpoint");
@@ -113,5 +116,17 @@ namespace DuplicateFinder
             }
             return GrpInt;
         }
+        private static void BlackListReader(string BLPath) //returns list of strings with the paths. Within the list, paths are already grouped by repetition groups if
+        {
+            string[] BLReader = System.IO.File.ReadAllLines(BLPath);
+            System.Console.WriteLine("Contents of Blacklist.txt = ");
+            foreach (string line in BLReader)
+            {
+                // Use a tab to indent each line of the file.
+                Console.WriteLine("\t" + line);
+            }
+        }
+
+        //Function to read Line by Line from Blacklist.txt
     }
 }

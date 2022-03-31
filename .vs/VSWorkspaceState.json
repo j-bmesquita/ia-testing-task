@@ -8,10 +8,10 @@
     "\\DuplicateFinder\\DuplicateFinder.Console\\obj",
     "\\DuplicateFinder\\DuplicateFinder.Console\\obj\\Release",
     "\\DuplicateFinder\\DuplicateFinder.Logic",
-    "\\DuplicateFinder\\DuplicateFinder.Logic\\bin\\Debug",
     "\\DuplicateFinder\\DuplicateFinderWPF",
+    "\\DuplicateFinder\\DuplicateFinderWPF\\ViewModels",
     "\\DuplicateFinder\\DuplicateFinderWPF\\Views"
   ],
-  "SelectedNode": "\\DuplicateFinder\\DuplicateFinder.sln",
+  "SelectedNode": "\\DuplicateFinder\\DuplicateFinderWPF\\Views\\DuplicateFinderView.xaml",
   "PreviewInSolutionExplorer": false
 }
