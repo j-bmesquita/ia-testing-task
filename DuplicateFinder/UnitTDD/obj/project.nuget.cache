@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2qv1/Qhh59ORd0Cm89VDp0be/ekizDwrorQfaOUtFKpfkMrnJiWWdRziheqIZWloM1wwmkwpDBAaUMHgrpExKQ==",
+  "dgSpecHash": "/YGeUAEa6rcHWOXnu86hPivz5Bijrf533NcxOa4pWPTW23UeRQ7AELrsceICYiTX83gjaUp1YHpi5LSErNfGRQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jbmes\\Source\\Repos\\j-bmesquita\\ia-testing-task\\DuplicateFinder\\UnitTDD\\UnitTDD.csproj",
+  "projectFilePath": "C:\\Users\\jbmes\\Source\\Repos\\j-bmesquita\\ia-testing-task\\DuplicateFinder\\UnitTDD\\DuplicateFinder.Logic.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jbmes\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
     "C:\\Users\\jbmes\\.nuget\\packages\\microsoft.codecoverage\\16.9.4\\microsoft.codecoverage.16.9.4.nupkg.sha512",

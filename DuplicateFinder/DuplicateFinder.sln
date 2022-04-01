@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogicTests", "LogicTests\Lo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunctionTests", "FunctionTests\FunctionTests.csproj", "{7902E19B-6AA9-48ED-A821-B20505E6D0ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTDD", "UnitTDD\UnitTDD.csproj", "{F4B99B57-D326-4014-9193-3FD718F634F0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DuplicateFinder.Logic.Tests", "UnitTDD\DuplicateFinder.Logic.Tests.csproj", "{F4B99B57-D326-4014-9193-3FD718F634F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

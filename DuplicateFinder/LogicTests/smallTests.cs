@@ -8,7 +8,7 @@ using DuplicateFinder.Logic.Model;
 
 namespace DuplicateFinder
 {
-    public class UnitTest1
+    public class smallTests
     {
         string folderPath = "C:\\Users\\jbmes\\source\\repos\\j-bmesquita\\ia-testing-task\\DuplicateFinder\\TestingGround\\Name1"; //input here path to test folder
         [Fact]

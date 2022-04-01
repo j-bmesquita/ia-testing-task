@@ -177,4 +177,67 @@ namespace DuplicateFinder.Logic
             return FileList;
         }
     }
+    //Classes and Methods added for the new features:
+
+    public class FileRenamer : DuplicateFinder //FileRenamer is an extension of Duplicate Finder
+    {
+        public List<string> ReadBlackListFetch(string pathBL)
+        {
+            var blLibrary = new List<string>(5);
+            throw new NotImplementedException();
+            return blLibrary;
+        }
+        public bool FileInBlackList(string filename, string pathFolder)
+        {
+            throw new NotImplementedException();
+            if (true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool CheckDuplicateName(string newfilenamewithpath, string oldfilenamewithpath)
+        {
+            //string pathnofile = Path.GetDirectoryName(oldfilenamewithpath);
+            //string newfilenamenopath = Path.GetFileName(newfilenamewithpath);
+            //string oldfilenamenopath = Path.GetFileName(oldfilenamewithpath);
+
+            if (newfilenamewithpath == oldfilenamewithpath)
+            {
+                return true;
+            }
+            else 
+            {
+                return false;
+            }
+        }
+        public void RenameDuplicate(string newfilenamewithpath, string oldfilenamewithpath)
+        {
+            //string pathnofile = Path.GetDirectoryName(oldfilenamewithpath);
+            //string newfilenamenopath = Path.GetFileName(newfilenamewithpath);
+            //string oldfilenamenopath = Path.GetFileName(oldfilenamewithpath);
+
+            if (true)
+            {
+                //return newfilenamewithpath;
+                //return true;
+            }
+            if (false) //in blacklist
+            {
+                //throw new InvalidOperationException(newfilename + " is in Files Blacklist.txt");
+                //return oldfilenamewithpath;
+                //return false;
+            }
+            if (false) //name already exists
+            {
+                //throw new InvalidOperationException(newfilename + " already exists);
+                //return oldfilenamewithpath;
+                //return false;
+            }
+        }
+    }
 }
