@@ -229,7 +229,6 @@ namespace DuplicateFinder.Logic
                 //}
             }
 
-
         
         public List<string> CompleteListGroups(IEnumerable<IDuplicate> duplicates) //returns list of strings with the paths. Within the list, paths are already grouped by repetition groups if
         {
@@ -245,13 +244,15 @@ namespace DuplicateFinder.Logic
 
             return grp;
         }
-        public bool CheckDuplicateName(string newFilenameWithPath, List<string> groups)
+        public bool CheckDuplicateName(string newFilenameWithPath, string oldfilenamewithpath) //we have to compare to the whole file, not just those repeated//, List<string> groups)
         {
-            //string pathnofile = Path.GetDirectoryName(oldfilenamewithpath);
+            string pathnofile = Path.GetDirectoryName(oldfilenamewithpath);
+            List<string> allFiles = Directory.GetFiles(pathnofile, "*").ToList(); //, SearchOption.AllDirectories);
+            
             //string newfilenamenopath = Path.GetFileName(newfilenamewithpath);
             //string oldfilenamenopath = Path.GetFileName(oldfilenamewithpath);
 
-            bool exists = groups.Any(s => s.Contains(newFilenameWithPath));
+            bool exists = allFiles.Any(s => s.Contains(newFilenameWithPath));
 
             if (exists)
             {
@@ -262,30 +263,37 @@ namespace DuplicateFinder.Logic
                 return false;
             }
         }
-        public void RenameDuplicate(string newFilename, string folderDuplicatePath, string blacklistPath, List<string> groups)
+        public int RenameDuplicate(string newFilename, string folderDuplicatePath, string blacklistPath) //int serves to code for why something happened
         {
             string pathNoFile = Path.GetDirectoryName(folderDuplicatePath); //gets path to be plugged in with the newfilename
                                                                             //string newfilenamenopath = Path.GetFileName(newfilenamewithpath);
                                                                             //string oldfilenamenopath = Path.GetFileName(oldfilenamewithpath);
 
-            bool check1 = FileInList(pathNoFile + "\\" + newFilename, blacklistPath);
+            bool check1 = FileInList(folderDuplicatePath, blacklistPath);
 
             if (check1) //in blacklist
             {
-                //return newfilenamewithpath;
-                //return true;
+                return -1; //file is blacklisted!
             }
-            if (!check1) //not in blacklist
+            else //not in blacklist
             {
-                bool check2 = CheckDuplicateName(pathNoFile + "\\" + newFilename, groups);
+                bool check2 = CheckDuplicateName(pathNoFile + "\\" + newFilename, folderDuplicatePath);
 
                 if (!check2) //chosen name doesn't exist already
                 {
-                    System.IO.File.Move(folderDuplicatePath, pathNoFile +"\\" + newFilename);
+                    try //for redundancy
+                    {
+                        System.IO.File.Move(folderDuplicatePath, pathNoFile + "\\" + newFilename);
+                        return 0; //operation executed
+                    }
+                    catch
+                    {
+                        return -2; //Something went wrong trying to write the file
+                    }
 
                 } else
                 {
-                    //raise exception
+                    return -3; //new filename already exists, cannot be used or file will be overwritten
                 }
             }
         }

@@ -130,8 +130,8 @@ namespace DuplicateFinder.Logic
 
 
             //act
-            bool checkValid = processor.CheckDuplicateName(inputValid, groups);
-            bool checkInvalid = processor.CheckDuplicateName(inputinValid, groups);
+            bool checkValid = processor.CheckDuplicateName(inputValid, groups[0]);
+            bool checkInvalid = processor.CheckDuplicateName(inputinValid, groups[0]);
 
             Assert.Equal(checkValid, false);
             Assert.Equal(checkInvalid, true);
@@ -141,8 +141,8 @@ namespace DuplicateFinder.Logic
         public void RenameFileWithNewName()
         {
             ///We can rename a folder with a new nonexisting name and not in blacklist
-            ///The user choses a file to rename, chooses a new name, and the function checks
-            ///if it is possible to rename the file (if it is in the Blacklist or if the new name already exists)
+            ///The user choses a file to rename (with the whole path), chooses a new name (no need for a path), and the function checks
+            ///if it is possible to rename the file (if it is in the Blacklist or if the new name already exists in the same folder)
             ///Whether the file is renamed or not is asserted at the end
 
             //arrange
@@ -155,24 +155,54 @@ namespace DuplicateFinder.Logic
             var duplicatesBySize = processor.CollectCandidates(pathFolder, Model.CompareMode.Size).ToList();
             List<string> groups = processor.CompleteListGroups(duplicatesBySize);
             string input = "newFileName.pdf"; //just the filename, the path is used since we don't want the user to write the whole path //we need to get the extension
+            string fileBL1 = "fileInBL.txt"; //we will create this within the folder Name1, add the path to the Files Blacklist.txt for this test, and at the end erase it from the Blacklist. The purpose is to assert that the function fails approprietely.
+            string fileBL2 = "fileInBL2.txt";
+            string repeatedInput = "newFileName2.pdf";
+            string inputExists = Path.GetFileName(groups[1]); //we will take one of the files that already exist and try to use, and assert that we are able to avoid overwirting per feature specification
             string saveOldName = Path.GetFileName(groups[0]);
+            //create blacklistedfiles (need to be duplicates):
+            File.Create(pathFolder+"\\"+ fileBL1).Dispose(); //create empty files, one with blacklisted name
+            File.Create(pathFolder + "\\" + fileBL2).Dispose(); //this one doesn't need blacklisted name
+            File.AppendAllText(pathFolderBL, (pathFolder + "\\" + fileBL1) + Environment.NewLine); //add path to blacklist, add a newline
+            //creating file with input as filename
+            File.Create(pathFolder + "\\" + repeatedInput).Dispose(); //create empty files, one with blacklisted name
 
             //bool check = true; //dummy for now
             //bool check = processor.CheckDuplicateName();
 
             //act
-            processor.RenameDuplicate(input, groups[0], pathFolderBL, groups); //picking Group[0] for testing purposes
-            //bool faiL = processor.RenameDuplicate(badinput, chosenfile); //test that both blacklisted and existing names cannot be used
-
+            int code1 = processor.RenameDuplicate(input, groups[0], pathFolderBL); //picking Group[0] for testing purposes
+            int code2 = processor.RenameDuplicate(input, pathFolder + "\\" + fileBL1, pathFolderBL); //for the blacklist test
+            int code3 = processor.RenameDuplicate(inputExists, groups[0], pathFolderBL);
 
             //assert
+
+            //testing a good input, nonblacklisted, available newfilename
             Assert.Equal(File.Exists(pathFolder +"\\" + input), true); //asserts we have the new file
             Assert.Equal(File.Exists(pathFolder + "\\" + saveOldName), false); //asserts the previous file doesn't exist anymore
 
             //resetting file to previous name:
-            processor.RenameDuplicate(saveOldName, pathFolder + "\\" + input, pathFolderBL, groups);
+            processor.RenameDuplicate(saveOldName, pathFolder + "\\" + input, pathFolderBL);
             Assert.Equal(File.Exists(pathFolder + "\\" + input), false); //asserts we have the old file
             Assert.Equal(File.Exists(pathFolder + "\\" + saveOldName), true); //asserts the new filename is no longer there (resets Test Staging Area)
+
+            //testing the blacklisted file case
+            Assert.Equal(-1, code2); //we triggered the right return
+            Assert.Equal(File.Exists(pathFolder + "\\" + fileBL1), true); //blacklistedfile still exists
+            Assert.Equal(File.Exists(pathFolder + "\\" + input), false); //input did not create a new file //redundancy
+
+            //resetting blacklist and erasing the extra two txt files
+            var lines = System.IO.File.ReadAllLines(pathFolderBL);
+            System.IO.File.WriteAllLines(pathFolderBL, lines.Take(lines.Length - 1).ToArray()); //create a new Files Blacklist minus the new line
+            File.Delete(pathFolder + "\\" + fileBL1); //erases both files
+            File.Delete(pathFolder + "\\" + fileBL2);
+
+            //testing input with a newfilename already being used
+            Assert.Equal(-3, code3); //we triggered the right return
+            File.Delete(pathFolder + "\\" + repeatedInput);
+
+
+
 
         }
 
