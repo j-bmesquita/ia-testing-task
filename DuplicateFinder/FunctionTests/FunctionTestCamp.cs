@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 //using Xunit;
 using System.Collections.Generic; //to use IEnumerate
 using System.Linq; //ToList
@@ -14,7 +15,10 @@ namespace DuplicateFinder
         public static void GetCollectEqualNameAndSize()
         {
             //arrange
-            string folderPath = "C:\\Users\\jbmes\\source\\repos\\j-bmesquita\\ia-testing-task\\DuplicateFinder\\TestingGround\\Name1"; //input here path to test folder
+            string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName;
+
+            string folderPath = ".\\UnitTDD\\TestingGround\\Name1"; //input here path to test folder
+            folderPath = path + folderPath;
 
             //act
             var finder = new DuplicateFinder.Logic.DuplicateFinder();
@@ -30,9 +34,7 @@ namespace DuplicateFinder
             CountGroupsSize(duplicatesBySize);
             Console.WriteLine("CompleteListGroups");
             CompleteListGroups(duplicatesBySize);
-            Console.WriteLine("BlackListReader");
-            string BLPath = @"C:\Users\jbmes\Documents\Files Blacklist.txt"; //It could not find path if Files Blacklisted were within the project?
-            BlackListReader(BLPath);
+            
             //Console.WriteLine(folderPath);
             //Console.WriteLine(finder);
             //Console.WriteLine(duplicatesBySize);
@@ -120,17 +122,33 @@ namespace DuplicateFinder
             }
             return GrpInt;
         }
-        private static void BlackListReader(string BLPath) //returns list of strings with the paths. Within the list, paths are already grouped by repetition groups if
+        private List<string>  BlackListReader(string BLPath) //returns list of strings with the paths. Within the list, paths are already grouped by repetition groups if
         {
+            var blLibrary = new List<string>();
             string[] BLReader = System.IO.File.ReadAllLines(BLPath);
             System.Console.WriteLine("Contents of Blacklist.txt = ");
             foreach (string line in BLReader)
             {
                 // Use a tab to indent each line of the file.
                 Console.WriteLine("\t" + line);
+                blLibrary.Add(line);
+            }
+            return blLibrary;
+        }
+        public bool FileInBlackList(string filename, string pathFolder)
+        {
+
+            List<string> BLReader = BlackListReader(pathFolder);
+            bool exists = BLReader.Any(s => s.Contains(filename));
+            if (exists)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
-
         //Function to read Line by Line from Blacklist.txt
     }
 }
