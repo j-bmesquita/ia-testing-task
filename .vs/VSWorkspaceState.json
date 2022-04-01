@@ -3,15 +3,14 @@
     "",
     "\\DuplicateFinder",
     "\\DuplicateFinder\\DuplicateFinder.Console",
-    "\\DuplicateFinder\\DuplicateFinder.Console\\bin",
-    "\\DuplicateFinder\\DuplicateFinder.Console\\bin\\Debug",
     "\\DuplicateFinder\\DuplicateFinder.Console\\obj",
     "\\DuplicateFinder\\DuplicateFinder.Console\\obj\\Release",
     "\\DuplicateFinder\\DuplicateFinder.Logic",
     "\\DuplicateFinder\\DuplicateFinderWPF",
     "\\DuplicateFinder\\DuplicateFinderWPF\\ViewModels",
-    "\\DuplicateFinder\\DuplicateFinderWPF\\Views"
+    "\\DuplicateFinder\\DuplicateFinderWPF\\Views",
+    "\\DuplicateFinder\\LogicTests"
   ],
-  "SelectedNode": "\\DuplicateFinder\\DuplicateFinderWPF\\Views\\DuplicateFinderView.xaml",
+  "SelectedNode": "\\DuplicateFinder\\LogicTests\\smallTests.cs",
   "PreviewInSolutionExplorer": false
 }

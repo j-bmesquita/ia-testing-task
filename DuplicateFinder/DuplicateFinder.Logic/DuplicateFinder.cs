@@ -179,12 +179,20 @@ namespace DuplicateFinder.Logic
     }
     //Classes and Methods added for the new features:
 
-    public class FileRenamer : DuplicateFinder //FileRenamer is an extension of Duplicate Finder
+    public class FileRenamer : DuplicateFinder //FileRenamer is an extension of Duplicate Finder for the new features
     {
         public List<string> ReadBlackListFetch(string pathBL)
         {
             var blLibrary = new List<string>(5);
-            throw new NotImplementedException();
+            string[] BLReader = System.IO.File.ReadAllLines(pathBL);
+            //System.Console.WriteLine("Contents of Blacklist.txt = ");
+            foreach (string line in BLReader)
+            {
+                // Use a tab to indent each line of the file.
+                blLibrary.Add(line);
+                //Console.WriteLine("\t" + line);
+            }
+
             return blLibrary;
         }
         public bool FileInBlackList(string filename, string pathFolder)

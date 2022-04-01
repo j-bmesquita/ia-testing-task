@@ -12,7 +12,7 @@ namespace DuplicateFinder.Logic
     public class NewFeatures
     {
         [Fact]
-        public void WeCanReadBlackList() 
+        public void WeCanReadBlackList()
         {
             ///This unit test checks if the function is able to correctly read
             ///the Files Blacklist.txt within resources It takes an array with
@@ -22,8 +22,8 @@ namespace DuplicateFinder.Logic
 
             //arrange
             var processor = new FileRenamer();
-
-            var pathBL = @"./DuplicateFinder/DuplicateFinderWPF/Resources/Files Blacklist.txt";
+            string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName;
+            string pathBL = path + @"/DuplicateFinderWPF/Resources/Files Blacklist.txt";
             var blLibrary = new List<string>(5);
 
             blLibrary.Add(@"C:\Users\guest\Documents\Software\ReactiveUI\LICENSE.txt");
@@ -31,7 +31,7 @@ namespace DuplicateFinder.Logic
             blLibrary.Add(@"C:\Users\guest\Desktop\Critical Software Standard\Done\Barmsnes et al, 1997 - Implementation of Graphical User Interfaces in Nuclear Applications.pdf");
 
             //act
-            List<string> response = processor.ReadBlackListFetch(pathBL);
+            List<string> response = processor.ReadBlackListFetch(path);
 
             //assert
             Assert.Equal(blLibrary,response);
