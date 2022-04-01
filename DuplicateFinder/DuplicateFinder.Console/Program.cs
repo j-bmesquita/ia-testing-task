@@ -12,6 +12,8 @@ namespace DuplicateFinder
     {
         public static void Main(string[] args)
         {
+            string BLPath = @"C:\Users\jbmes\Documents\Files Blacklist.txt"; //set within the program
+            List<string> grp = new List<string>();
             ConsoleKeyInfo runAgain;
             do
             {
@@ -36,7 +38,7 @@ namespace DuplicateFinder
 
                 Console.WriteLine("These are potential duplicates by size:");
                 PrintDuplicates(duplicatesBySize);
-            
+
                 Console.WriteLine("These are potential duplicates by size and name:");
                 PrintDuplicates(duplicatesBySizeAndName);
 
@@ -45,9 +47,39 @@ namespace DuplicateFinder
 
                 Console.WriteLine("Execution time:" + sw.ElapsedMilliseconds + "ms");
 
+                //addition
+                //Read from blacklist
+                List<string> BLl = new List<string>();
+                BlackListReader(BLPath, BLl);
+                Console.WriteLine(BLl[0]);
+                grp = CompleteListGroups(duplicatesBySize);
+                Console.WriteLine(grp[0]);
+
+                
+                do
+                {
+                    Console.WriteLine("Select File: ");
+                    grp.ForEach(Console.WriteLine);
+                    string fileselected = Console.ReadLine();
+
+                    //is it blacklisted?
+                    bool blexists = BLl.Any(s => s.Contains(fileselected));
+                    if (!blexists) {
+                        Console.WriteLine("Allowed!");
+                    } else
+                    {
+                        Console.WriteLine("The file you've tried accessing is blacklisted!");
+                    }
+
+
+                } while (!Directory.Exists(folderPath));
+
+                //addition
+
                 Console.WriteLine("Run again [y/n]?");
                 runAgain = Console.ReadKey();
             } while (runAgain.Key == ConsoleKey.Y);
+            
         }
 
         private static void PrintDuplicates(IEnumerable<IDuplicate> duplicates)
@@ -60,13 +92,40 @@ namespace DuplicateFinder
                 Console.WriteLine();
             }
         }
-        
+
         private static void PrintDuplicate(IDuplicate duplicate)
         {
             foreach (var filePath in duplicate.FilePaths)
             {
                 Console.WriteLine(filePath);
             }
+        }
+        static List<string> BlackListReader(string BLPath, List<string> list) //returns list of strings with the paths. Within the list, paths are already grouped by repetition groups if
+        {
+            string[] BLReader = System.IO.File.ReadAllLines(BLPath);
+            //System.Console.WriteLine("Contents of Blacklist.txt = ");
+
+            foreach (string line in BLReader)
+            {
+                // Use a tab to indent each line of the file.
+                //Console.WriteLine("\t" + line);
+                list.Add(line);
+            }
+            return list;
+        }
+        private static List<string> CompleteListGroups(IEnumerable<IDuplicate> duplicates) //returns list of strings with the paths. Within the list, paths are already grouped by repetition groups if
+        {
+            List<string> Grp = new List<string>();
+            foreach (var duplicate in duplicates)
+            {
+                foreach (var filePath in duplicate.FilePaths)
+                {
+                   // Grp.Add(filePath);
+                }
+            }
+            //Console.WriteLine(Grp[0]);
+
+            return Grp;
         }
     }
 }

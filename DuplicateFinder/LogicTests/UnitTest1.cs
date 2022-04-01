@@ -12,7 +12,7 @@ namespace DuplicateFinder
     {
         string folderPath = "C:\\Users\\jbmes\\source\\repos\\j-bmesquita\\ia-testing-task\\DuplicateFinder\\TestingGround\\Name1"; //input here path to test folder
         [Fact]
-        public void NumberOfGroups()
+        public void NumberOfGroups() //tests number of groups of repetitions detected
         {
             //arrange
             int dupSize = 2;
@@ -33,7 +33,7 @@ namespace DuplicateFinder
 
         }
         [Fact]
-        public void NumberCompositionGroups()
+        public void NumberCompositionGroups() //tests how many repetitions in each group
         {
             //arrange
             List<int> SizeArray = new List<int>(2);
@@ -50,7 +50,7 @@ namespace DuplicateFinder
             Assert.Equal(SizeArray, CountGroupsSize(duplicatesBySize));
         }
         [Fact]
-        public void StringCompositionGroups()
+        public void StringCompositionGroups() //tests if the path collection into strings work properly
         {
             //arrange
             List<string> pathArray = new List<string>(5);

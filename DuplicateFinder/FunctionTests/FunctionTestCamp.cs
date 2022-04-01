@@ -24,10 +24,13 @@ namespace DuplicateFinder
             var duplicatesByHash = finder.CheckCandidates(duplicatesBySizeAndName).ToList();
 
             //assert
+            Console.WriteLine("TestPrintDuplicates");
             TestPrintDuplicates(duplicatesBySize);
+            Console.WriteLine("CountGroupsSize");
             CountGroupsSize(duplicatesBySize);
+            Console.WriteLine("CompleteListGroups");
             CompleteListGroups(duplicatesBySize);
-            
+            Console.WriteLine("BlackListReader");
             string BLPath = @"C:\Users\jbmes\Documents\Files Blacklist.txt"; //It could not find path if Files Blacklisted were within the project?
             BlackListReader(BLPath);
             //Console.WriteLine(folderPath);
@@ -74,7 +77,7 @@ namespace DuplicateFinder
             // List<int> GrpInt = new List<int> { };
             foreach (var duplicate in duplicates)
             {
-                Console.WriteLine("Group Checkpoint");
+                //Console.WriteLine("Group Checkpoint");
                 //int i = 0;
                 foreach (var filePath in duplicate.FilePaths)
                 {
@@ -85,11 +88,12 @@ namespace DuplicateFinder
                 //GrpInt.Add(i);
             }
             //Console.WriteLine("Size of List ", Grp.Count);
-            //Console.WriteLine(Grp); //does not print actual list
-            foreach (string k in Grp) //prints element by element
-            {
-                Console.WriteLine(k);
-            }
+            Console.WriteLine(Grp[0]); //gives back the individual pieces
+            //foreach (string k in Grp) //prints element by element
+            //{
+            //    Console.WriteLine(k);
+            //}
+
             return Grp;
         }
         private static List<int> CountGroupsSize(IEnumerable<IDuplicate> duplicates) //returns list of strings and group number for splits
@@ -98,7 +102,7 @@ namespace DuplicateFinder
             List<int> GrpInt = new List<int> { };
             foreach (var duplicate in duplicates)
             {
-                Console.WriteLine("Group Checkpoint");
+                //Console.WriteLine("Group Checkpoint");
                 int i = 0;
                 foreach (var filePath in duplicate.FilePaths)
                 {
