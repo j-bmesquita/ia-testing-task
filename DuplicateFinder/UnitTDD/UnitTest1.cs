@@ -45,8 +45,6 @@ namespace DuplicateFinder.Logic
             ///so that we do not touch prohibited files
             ///We take a good and bad input requested by user, and output a boolean
             ///True is in blacklist, false is not.
-            ///to do: have the test use a created input in a created dummy blacklist file 
-            ///and anohter input not in the dummy blacklist file
 
 
             //arrange
@@ -131,7 +129,7 @@ namespace DuplicateFinder.Logic
         [Fact]
         public void RenameFileWithNewNameValid()
         {
-            ///We can rename a folder with a new nonexisting name and not in blacklist
+            ///We can rename a folder with a new nonexisting name in the folder (paths have to be different) and not in blacklist
             ///The user choses a file to rename (with the whole path), chooses a new name (no need for a path), and the function checks
             ///if it is possible to rename the file (if it is in the Blacklist or if the new name already exists in the same folder)
             ///Whether the file is renamed or not is asserted at the end
