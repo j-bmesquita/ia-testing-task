@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Security.Cryptography;
 using DuplicateFinder.Logic.Interface;
 using DuplicateFinder.Logic.Model;
@@ -110,21 +111,41 @@ namespace DuplicateFinder.Logic
 
                 if (!check2) //chosen name doesn't exist already
                 {
-                    try //for redundancy
-                    {
-                        System.IO.File.Move(folderDuplicatePath, pathNoFile + "\\" + newFilename);
-                        return 0; //operation executed
-                    }
-                    catch
-                    {
-                        return -2; //Something went wrong trying to write the file
-                    }
+                    string filename = pathNoFile + "\\" + newFilename;
+                    bool check3 = IsValidFilename(filename);
 
-                } else
+                    if (check3)
+                    {
+                        try //for redundancy
+                        {
+                            System.IO.File.Move(folderDuplicatePath, pathNoFile + "\\" + newFilename);
+                            return 0; //operation executed
+                        }
+                        catch
+                        {
+                            return -2; //Something went wrong trying to write the file //name may be still invalid
+                        }
+                    }
+                    else
+                    {
+                        return -4; //invalid characters used to rename file
+                    }
+                }
+                else
                 {
                     return -3; //new filename already exists, cannot be used or file will be overwritten
+                } 
                 }
             }
+        bool IsValidFilename(string testName) //courtesy of https://stackoverflow.com/questions/62771/how-do-i-check-if-a-given-string-is-a-legal-valid-file-name-under-windows#62855
+        {
+            Regex containsABadCharacter = new Regex("["
+                  + Regex.Escape(new string(System.IO.Path.GetInvalidPathChars())) + "]");
+            if (containsABadCharacter.IsMatch(testName)) { return false; };
+
+            // other checks for UNC, drive-path format, etc
+
+            return true;
         }
     }
 }

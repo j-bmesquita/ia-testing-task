@@ -72,7 +72,7 @@ namespace DuplicateFinder
                         {
                             do
                             {
-                                Console.WriteLine("Type new filename with extension (no need for path). Write 'exit' to cancel renaming this file: ");
+                                Console.WriteLine("Type new filename WITH EXTENSION (no need for path). Write 'exit' to cancel renaming this file: ");
                                 input = Console.ReadLine();
 
                                 if (input == "exit")
