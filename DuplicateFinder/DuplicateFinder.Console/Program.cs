@@ -88,7 +88,28 @@ namespace DuplicateFinder
                                         if (response != ConsoleKey.Enter)
                                             Console.WriteLine();
                                     } while (response != ConsoleKey.Y && response != ConsoleKey.N);
-                                    confirmed = response == ConsoleKey.Y;
+
+                                    var processor = new Logic.FileRenamer();
+                                    string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+                                    string pathFolderBL = path + ".\\DuplicateFinder.Console\\TestingGround\\Files Blacklist.txt"; //folder with Blacklist
+                                    
+                                    int result = processor.RenameDuplicate(input, filePath, pathFolderBL);
+                                    
+                                    if (result == 0) //success
+                                    {
+                                        confirmed = response == ConsoleKey.Y;
+                                        Console.WriteLine(result);
+                                    }
+                                    if (result == -1)
+                                    {
+                                        Console.WriteLine("The file chosen has been blacklisted!");
+                                        cancel = true;
+                                    }
+                                    if (result == -3)
+                                    {
+                                        Console.WriteLine("The new file name already exists!");
+                                        //cancel = true;
+                                    }
                                 }
                             } while (!confirmed && !cancel);
                         }
