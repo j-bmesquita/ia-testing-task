@@ -6,11 +6,9 @@
     "\\DuplicateFinder\\DuplicateFinder.Console\\obj",
     "\\DuplicateFinder\\DuplicateFinder.Console\\obj\\Release",
     "\\DuplicateFinder\\DuplicateFinder.Logic",
-    "\\DuplicateFinder\\DuplicateFinderWPF",
-    "\\DuplicateFinder\\DuplicateFinderWPF\\ViewModels",
-    "\\DuplicateFinder\\DuplicateFinderWPF\\Views",
-    "\\DuplicateFinder\\LogicTests"
+    "\\DuplicateFinder\\LogicTests",
+    "\\DuplicateFinder\\UnitTDD"
   ],
-  "SelectedNode": "\\DuplicateFinder\\LogicTests\\smallTests.cs",
+  "SelectedNode": "\\DuplicateFinder\\DuplicateFinder.sln",
   "PreviewInSolutionExplorer": false
 }

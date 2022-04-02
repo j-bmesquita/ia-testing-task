@@ -45,8 +45,60 @@ namespace DuplicateFinder
 
                 Console.WriteLine("Execution time:" + sw.ElapsedMilliseconds + "ms");
 
+                //including new features below:
+                ConsoleKey response;
+                do
+                {
+                    Console.Write("Do you wish to rename any files [y/n]?");
+                    response = Console.ReadKey(false).Key;
+                    if (response == ConsoleKey.Y)
+                    {
+                        string input;
+                        bool confirmed = false;
+                        bool cancel = false;
+                        bool cancel2 = false;
+                        string filePath;
+                        do
+                        {
+                            Console.WriteLine();
+                            Console.Write("Type folder FullPath with current filename. Write exit to cancel this operation: ");
+                            filePath = Console.ReadLine();
+                            if (filePath == "exit")
+                            {
+                                cancel2 = true;
+                            }
+                        } while (!File.Exists(filePath) && !cancel2);
+                        if (!cancel2)
+                        {
+                            do
+                            {
+                                Console.WriteLine("Type new filename with extension (no need for path). Write 'exit' to cancel renaming this file: ");
+                                input = Console.ReadLine();
 
-                Console.WriteLine("Run again [y/n]?");
+                                if (input == "exit")
+                                {
+                                    cancel = true;
+                                }
+                                if (!cancel && !confirmed)
+                                {
+                                    do
+                                    {
+                                        Console.WriteLine("new name selected, " + input + ", are you sure [y/n]?");
+                                        response = Console.ReadKey(false).Key;   // true is intercept key (dont show), false is show
+                                        if (response != ConsoleKey.Enter)
+                                            Console.WriteLine();
+                                    } while (response != ConsoleKey.Y && response != ConsoleKey.N);
+                                    confirmed = response == ConsoleKey.Y;
+                                }
+                            } while (!confirmed && !cancel);
+                        }
+                    }
+
+                } while (response != ConsoleKey.N);
+
+                ////including new features above
+                Console.WriteLine();
+                Console.Write("Run again [y/n]?");
                 runAgain = Console.ReadKey();
             } while (runAgain.Key == ConsoleKey.Y);
             
